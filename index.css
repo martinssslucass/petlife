@@ -19,6 +19,14 @@ header {
     padding-right: 80px;
     padding-top: 24px;
     padding-bottom: 24px;
+    position: fixed;
+    /* Torna o menu fixo */
+    top: 0;
+    /* Fixa o menu no topo */
+    width: 100%;
+    /* Define a largura total */
+    z-index: 1;
+    /* Define a ordem de empilhamento */
 }
 
 header nav a {
@@ -28,11 +36,32 @@ header nav a {
     text-decoration: none;
 }
 
+#subir-topo {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 99;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    background-image: url('img/subir-topo.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/* #subir-topo {
+bottom: 80px;
+} */
+/* Posiciona para cima em 80px */
+
+
 #inicio {
     display: flex;
     align-items: center;
     gap: 32px;
     padding: 24px 80px 128px 80px;
+    padding-top: 200px;
     position: relative;
 }
 
@@ -50,13 +79,29 @@ h4 {
     margin-bottom: 32px;
 }
 
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
 .botao {
+    display: inline-block;
     background-color: #ff725e;
     padding: 16px 32px;
     border-radius: 8px;
     color: #FFFF;
     text-decoration: none;
-
+    transition: transform 0.3s;
+    animation: pulse 1.5s infinite;
 }
 
 .botao-transparente {
